@@ -8,9 +8,10 @@ public class Employee {
 	private String name;
 	private String id;
 	private String emailAddress;
+	private PositionType position;
 	private List<AvailableDays> days;
 	
-	enum AvailableDays {
+	public enum AvailableDays {
 		SUNDAY,
 		MONDAY,
 		TUESDAY,
@@ -18,6 +19,10 @@ public class Employee {
 		THURSDAY,
 		FRIDAY,
 		SATURDAY
+	}
+	
+	public enum PositionType {
+		
 	}
 	
 	//START Constructors 
@@ -45,5 +50,7 @@ public class Employee {
 				AvailableDays.WEDNESDAY, AvailableDays.THURSDAY, AvailableDays.FRIDAY, AvailableDays.SATURDAY);
 	
 	}
+	
+	
 	
 }
