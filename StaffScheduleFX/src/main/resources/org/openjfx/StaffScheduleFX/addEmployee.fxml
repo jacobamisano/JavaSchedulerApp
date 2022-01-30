@@ -10,6 +10,8 @@
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.StaffScheduleFX.AddEmployeeController">
     <children>
     	<Label text="Please fill out the following fields and click Submit Employee when finished."/>
+    	<Label fx:id="lblEmployeeError" text="" styleClass="error"/>
+    	
     	
     	<HBox styleClass="Row">
     		<Label text="Name: " styleClass="formFieldLabel"/>
@@ -18,12 +20,12 @@
     	
     	<HBox styleClass="Row">
     		<Label text="Employee ID: " styleClass="formFieldLabel"/>
-    		<TextField fx:id="txtEmployeeId" styleClass="formField"/>
+    		<TextField fx:id="txtEmployeeID" styleClass="formField"/>
     	</HBox>
     	
     	<HBox styleClass="Row">
     		<Label text="Email Address: "/>
-    		<TextField fx:id="txtEmployeeName" styleClass="formField"/>
+    		<TextField fx:id="txtEmployeeEmailAddress" styleClass="formField"/>
     	</HBox>
     	
     	<HBox styleClass="Row">
