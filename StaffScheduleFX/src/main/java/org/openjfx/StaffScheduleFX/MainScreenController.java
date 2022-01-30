@@ -3,16 +3,11 @@ package org.openjfx.StaffScheduleFX;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class PrimaryController {
-
-    @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
-    }
+public class MainScreenController {
     
     @FXML
-    private void onBtnAddEmployeeClick() {
-    	
+    private void onBtnAddEmployeeClick() throws IOException{
+    	App.setRoot("addEmployee");
     }
     
     @FXML
