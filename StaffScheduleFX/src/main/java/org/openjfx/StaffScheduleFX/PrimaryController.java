@@ -3,7 +3,7 @@ package org.openjfx.StaffScheduleFX;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class MainScreenController {
+public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
