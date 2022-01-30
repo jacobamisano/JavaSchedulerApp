@@ -6,7 +6,12 @@ import javafx.fxml.FXML;
 public class AddEmployeeController {
 
     @FXML
-    private void switchToPrimary() throws IOException {
+    private void onBtnAddEmployeeClick() throws IOException {
         App.setRoot("mainScreen");
+    }
+    
+    @FXML
+    private void onBtnCancelEmployeeClick() throws IOException{
+    	App.setRoot("mainScreen");
     }
 }

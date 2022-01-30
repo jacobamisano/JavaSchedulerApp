@@ -7,12 +7,13 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.StaffScheduleFX.MainScreenController">
    <children>
+   <!-- Note: fx:id attributes are not needed due to no reference to the text/buttons other than events handled in the onAction -->
       <Label text="Please select an option from the choices below." />
-      <Button fx:id="btnAddEmployee" text="Enter Employee Data" onAction="#onBtnAddEmployeeClick"/>
-      <Button fx:id="btnAddTimeOff" text="Enter Time-OFf Request" onAction="#onBtnAddTimeOffClick"/>
-      <Button fx:id="btnViewEmployees" text="ViewCurrentEmployees" onAction="#onBtnViewEmployeeClick"/>
-      <Button fx:id="btnEditSchedulePreferences" text="ViewCurrentEmployees" onAction="#onBtnEditSchedulePreferencesClick"/>
-      <Button fx:id="btnBuildSchedule" text="Build Schedule for the current week" onAction="#onBtnBuildScheduleClick"/>
+      <Button text="Enter Employee Data" onAction="#onBtnAddEmployeeClick"/>
+      <Button text="Enter Time-OFf Request" onAction="#onBtnAddTimeOffClick"/>
+      <Button text="ViewCurrentEmployees" onAction="#onBtnViewEmployeeClick"/>
+      <Button text="ViewCurrentEmployees" onAction="#onBtnEditSchedulePreferencesClick"/>
+      <Button text="Build Schedule for the current week" onAction="#onBtnBuildScheduleClick"/>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
