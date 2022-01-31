@@ -11,8 +11,8 @@ public class MainScreenController {
     }
     
     @FXML
-    private void onBtnAddTimeOffClick() {
-    	
+    private void onBtnAddTimeOffClick() throws IOException{
+    	App.setRoot("timeOffRequest");
     }
     
     @FXML

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.controlsfx.control.CheckComboBox;
 
 import javafx.scene.control.CheckBox;
 import javafx.event.ActionEvent;
@@ -29,9 +28,6 @@ public class AddEmployeeController {
 	
 	@FXML
 	private TextField txtEmployeePosition;
-	
-	@FXML
-	private CheckComboBox<String> checkComboBoxDaysOfWeek;
 	
 	@FXML
 	private CheckBox checkBoxSunday;
@@ -174,7 +170,6 @@ public class AddEmployeeController {
 			//System.out.println("Ran fieldFilled for " + field.getId());
 			return false;
 		}
-		
 		return true;
 	}
 	

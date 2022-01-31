@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.StaffScheduleFX.TimeOffRequestController">
+	<Label text="Fill out the information below and click submit when finished."/>
+	<Label text="" fx:id="lblTimeOffRequestError" styleClass="error"/>
+	<HBox styleClass="row">
+		<Label text="Employee Submitting Request"/>
+		<TextField fx:id="txtEmployeeSubmittingRequest"/>
+	</HBox>	
+	
+	<HBox styleClass="row">
+		<Label text="Start Date for Request"/>
+		<TextField fx:id="txtStartDateTime"/>
+	</HBox>	
+	
+	<HBox styleClass="row">
+		<Label text="End Date of Request"/>
+		<TextField fx:id="txtEndDateTime"/>
+	</HBox>	
+	
+	<HBox styleClass="row">
+		<Label text="Date of Request Submission \n(Leave blank to use the current date)"/>
+		<TextField fx:id="txtDateOfRequest"/>
+	</HBox>	
+	
+	<HBox styleClass="row">
+		<Button text="Cancel" onAction="#onBtnTimeOffRequestCancelClick"/>
+		<Button text="Submit" onAction="#onBtnTimeOffRequestSubmitClick"/>
+	</HBox>
+</VBox>
+

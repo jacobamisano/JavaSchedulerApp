@@ -46,9 +46,7 @@
     				<CheckBox fx:id="checkBoxThursday" text="Thursday" onAction="#onCheckBoxCheck"/>
     				<CheckBox fx:id="checkBoxFriday" text="Friday" onAction="#onCheckBoxCheck"/>
     				<CheckBox fx:id="checkBoxSaturday" text="Saturday" onAction="#onCheckBoxCheck"/>
-
     			</VBox>
-    		
     	</HBox>
     	
     	<HBox styleClass="Row">
