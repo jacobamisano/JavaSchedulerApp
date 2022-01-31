@@ -41,6 +41,7 @@ public class AddEmployeeController {
 	
 	
 	private boolean isValidData() {
+		lblEmployeeError.setText("");
 		
 		if(!allFieldsFilled()) {
 			return false;

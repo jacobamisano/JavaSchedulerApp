@@ -4,12 +4,14 @@ import java.util.regex.Pattern;
 
 public class StringHelper {
 	//Note: no access modifier allows for files within the package to use the methods
-	//REGEX CHEAT SHEET: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet
+	//REGEX CHEAT SHEET JAVA: http://tutorials.jenkov.com/java-regex/index.html#java-regular-expression-syntax
 	
 	static boolean textIsEmail(String textToCheck) {
-		Pattern pattern = Pattern.compile("^[/w]+[@]{1}[/w]+[.]{1}[/w]{1,3}$");
 		
-		if(pattern.matcher(textToCheck.trim()).find()) {
+		Pattern pattern = Pattern.compile("^[^@.]+@{1}[^@.]+.{1}[a-z]{1,3}$");
+		
+		
+		if(pattern.matcher(textToCheck).find()) {
 			return true;
 		}
 	    
@@ -17,8 +19,12 @@ public class StringHelper {
 	}
 	
 	static boolean nameIsValid(String nameToCheck) {
-		Pattern pattern = Pattern.compile("^[");
+		nameToCheck = nameToCheck.toLowerCase();
+		Pattern pattern = Pattern.compile("^[a-z']+$");
 		
+		if(pattern.matcher(nameToCheck).find()) {
+			return true;
+		}
 		
 		return false;
 	}
