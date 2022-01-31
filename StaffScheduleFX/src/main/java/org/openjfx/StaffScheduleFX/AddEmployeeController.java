@@ -3,7 +3,11 @@ package org.openjfx.StaffScheduleFX;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import org.controlsfx.control.CheckComboBox;
 
+import javafx.scene.control.CheckBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -27,18 +31,23 @@ public class AddEmployeeController {
 	private TextField txtEmployeePosition;
 	
 	@FXML
+	private CheckComboBox<String> checkComboBoxDaysOfWeek;
+	
+	@FXML 
+	private CheckBox checkBoxAllDays;
+	
+	@FXML
 	private void onBtnCancelEmployeeClick() throws IOException{
 		App.setRoot("mainScreen");
 	}
-	
+		
 	@FXML
 	private void onBtnAddEmployeeClick() throws IOException{
 		if(isValidData()) {
-			//TODO: Add Storing of employee data
+			//TODO: Add Storing of employee data, Create Employee Object used for storing
 			txtEmployeeName.setText("CONGRATULATIONS THE ADDING WORKED");
 		}
 	}
-	
 	
 	private boolean isValidData() {
 		lblEmployeeError.setText("");
@@ -93,5 +102,10 @@ public class AddEmployeeController {
 		}
 		
 		return true;
+	}
+	
+	@FXML
+	private void onCheckBoxCheck(CheckBox callingBox) {
+		
 	}
 }
