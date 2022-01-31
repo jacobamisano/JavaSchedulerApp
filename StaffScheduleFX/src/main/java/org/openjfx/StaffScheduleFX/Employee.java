@@ -1,5 +1,6 @@
 package org.openjfx.StaffScheduleFX;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,17 +10,7 @@ public class Employee {
 	private String id;
 	private String emailAddress;
 	private PositionType position;
-	private List<AvailableDays> days;
-	
-	public enum AvailableDays {
-		SUNDAY,
-		MONDAY,
-		TUESDAY,
-		WEDNESDAY,
-		THURSDAY,
-		FRIDAY,
-		SATURDAY
-	}
+	private List<String> availableDays = new ArrayList<>();
 	
 	public enum PositionType {
 		
@@ -30,15 +21,15 @@ public class Employee {
 		name = null;
 		id = null;
 		emailAddress = null;
-		days = null;
+		availableDays = null;
 	}
 	
 	public Employee(String name, String id,
-			String emailAddress, List<AvailableDays> days) {
+			String emailAddress, List<String> days) {
 		this.name = name;
 		this.id = id;
 		this.emailAddress = emailAddress;
-		this.days = days;
+		this.availableDays = days;
 	}
 	
 	public Employee(String name, String id,
@@ -46,9 +37,16 @@ public class Employee {
 		this.name = name;
 		this.id = id;
 		this.emailAddress = emailAddress;
-		this.days = Arrays.asList(AvailableDays.SUNDAY, AvailableDays.MONDAY, AvailableDays.TUESDAY,
-				AvailableDays.WEDNESDAY, AvailableDays.THURSDAY, AvailableDays.FRIDAY, AvailableDays.SATURDAY);
+		this.availableDays = Arrays.asList("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+				"Friday", "Satuday");
+	}
 	
+	public boolean addAvailableDay(String day) {
+		if(!this.availableDays.contains(day)) {
+			this.availableDays.add(day);
+			return true;
+		}
+		return false;
 	}
 	
 	
