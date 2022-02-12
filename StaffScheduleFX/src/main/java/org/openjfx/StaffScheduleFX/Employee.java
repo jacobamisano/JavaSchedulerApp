@@ -10,7 +10,7 @@ public class Employee {
 	private String id;
 	private String emailAddress;
 	private PositionType position;
-	private List<String> availableDays = new ArrayList<>();
+	private List<String> availableDays;
 	
 	public enum PositionType {
 		
@@ -39,8 +39,9 @@ public class Employee {
 		this.emailAddress = emailAddress;
 		this.availableDays = Arrays.asList("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
 				"Friday", "Satuday");
+		
 	}
-	
+	//END Constructors
 	public boolean addAvailableDay(String day) {
 		if(!this.availableDays.contains(day)) {
 			this.availableDays.add(day);
@@ -48,7 +49,4 @@ public class Employee {
 		}
 		return false;
 	}
-	
-	
-	
 }

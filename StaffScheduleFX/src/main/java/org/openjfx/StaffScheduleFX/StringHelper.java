@@ -28,4 +28,15 @@ public class StringHelper {
 		
 		return false;
 	}
+	
+	static boolean isDateFormat(String textToCheck) {
+		Pattern pattern = Pattern.compile("^[0-9]{2}/[0-9]{2}/[0-9]{4}$");
+		
+		if (pattern.matcher(textToCheck).find()) {
+			return true;
+		}
+		
+		
+		return false;
+	}
 }

@@ -14,10 +14,16 @@ public class TimeOffRequestController {
 	TextField txtEmployeeSubmittingRequest;
 	
 	@FXML
-	TextField txtStartDateTime;
+	TextField txtStartRequestDate;
 	
 	@FXML
-	TextField txtEndDateTime;
+	TextField txtStartRequestTime;
+	
+	@FXML
+	TextField txtEndRequestDate;
+	
+	@FXML
+	TextField txtEndRequestTime;
 	
 	@FXML
 	TextField txtDateOfRequest;
@@ -34,12 +40,37 @@ public class TimeOffRequestController {
 	
 	@FXML
 	private void onBtnTimeOffRequestSubmitClick() {
-		
+		if (isValidTimeOffRequestData()) {
+			
+			System.out.println("Yay successful time off request!!!");
+		} else {
+			System.out.println("Uh Oh Stinky! Bad Time Off Request!");
+		}
 	}
 	
 	@FXML
 	private void onBtnTimeOffRequestCancelClick() throws IOException{
 		App.setRoot("mainScreen");
+	}
+	
+	private boolean isValidTimeOffRequestData() {
+		if(!StringHelper.isDateFormat(txtStartRequestDate.getText())) {
+			return false;
+		}
+		
+		
+		return true;
+	}
+	
+	@FXML
+	private boolean allFieldsFilled() {
+		
+		if(txtStartRequestDate.getText() == "" || txtStartRequestTime.getText() == "" || txtEndRequestDate.getText() == "" ||
+				txtEndRequestTime.getText() == "" || txtEmployeeSubmittingRequest.getText() == "") {
+			return false;
+		}
+		
+		return true;
 	}
 	
 	
