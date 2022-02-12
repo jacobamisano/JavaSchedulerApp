@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class TimeOffRequestController {
+	
 	@FXML
 	TextField txtEmployeeSubmittingRequest;
 	
@@ -54,7 +55,12 @@ public class TimeOffRequestController {
 	}
 	
 	private boolean isValidTimeOffRequestData() {
-		if(!StringHelper.isDateFormat(txtStartRequestDate.getText())) {
+		//Note: Error message is handled in the allFieldsFilled method
+		if (!allFieldsFilled()) {
+			return false;
+		}
+		
+		if(!isCorrectFormatting()) {
 			return false;
 		}
 		
@@ -65,8 +71,48 @@ public class TimeOffRequestController {
 	@FXML
 	private boolean allFieldsFilled() {
 		
-		if(txtStartRequestDate.getText() == "" || txtStartRequestTime.getText() == "" || txtEndRequestDate.getText() == "" ||
-				txtEndRequestTime.getText() == "" || txtEmployeeSubmittingRequest.getText() == "") {
+		lblTimeOffRequestError.setText("");
+		
+		if(txtStartRequestDate.getText() == "") {
+			lblTimeOffRequestError.setText(lblTimeOffRequestError.getText() + "\nPlease fill out the start date for the request.");
+		}
+		
+		if(txtStartRequestTime.getText() == "") {
+			lblTimeOffRequestError.setText(lblTimeOffRequestError.getText() + "\nPlease fill out the start time for the request.");
+		}
+		
+		if(txtEndRequestDate.getText() == "") {
+			lblTimeOffRequestError.setText(lblTimeOffRequestError.getText() + "\nPlease fill out the end date for the request.");
+		}
+		
+		if(txtEndRequestTime.getText() == "") {
+			lblTimeOffRequestError.setText(lblTimeOffRequestError.getText() + "\nPlease fill out the end time for the request.");
+		}
+		
+		if (txtEmployeeSubmittingRequest.getText() == "") {
+			lblTimeOffRequestError.setText(lblTimeOffRequestError.getText() + "\nPlease fill out the employee submitting the request.");
+		}
+		
+		if(lblTimeOffRequestError.getText() != "") {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isCorrectFormatting() {
+		
+		lblTimeOffRequestError.setText("");
+		
+		if(!StringHelper.isDateFormat(txtStartRequestDate.getText()) || !StringHelper.isDateFormat(txtEndRequestDate.getText())) {
+			lblTimeOffRequestError.setText("Please use the format MM/DD/YYYY for dates. Check your start date and end date format.");
+		}
+		
+		if(!StringHelper.isTimeFormat(txtStartRequestTime.getText()) || !StringHelper.isTimeFormat(txtEndRequestTime.getText())) {
+			lblTimeOffRequestError.setText("Please use the format 'HH:MM AM/PM' for times. Check your start time and/or end time");
+		}
+		
+		if(lblTimeOffRequestError.getText() != "") {
 			return false;
 		}
 		

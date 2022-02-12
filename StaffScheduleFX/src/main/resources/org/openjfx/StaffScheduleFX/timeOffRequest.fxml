@@ -9,7 +9,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.StaffScheduleFX.TimeOffRequestController">
 	<children>
-		<Label text="Fill out the information below and click submit when finished."/>
+		<Label text="Fill out the information below and click submit when finished.\nUse the format MM/DD/YYYY for dates and 'HH:MM AM/PM' for time. Examples: '10/20/2017' and '10:28 AM' "/>
 		<Label text="" fx:id="lblTimeOffRequestError" styleClass="error"/>
 		
 		<HBox styleClass="row">
